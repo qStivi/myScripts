@@ -1,6 +1,6 @@
 # Scripts Collection
 
-This repository contains a variety of useful Linux and general-purpose scripts. Each script is designed to be self-contained and may automate setup, maintenance, or troubleshooting tasks.
+This repository contains a variety of useful Linux and general-purpose scripts. Each script is self-contained and may automate setup, maintenance, or troubleshooting tasks.
 
 ---
 
@@ -26,7 +26,7 @@ This repository contains a variety of useful Linux and general-purpose scripts. 
 
 **Recommended: Download, Inspect, Then Run**
 
-This approach lets you review the script before running it and fully supports interactive prompts (like password entry, confirmations, etc).
+This lets you review the script before running it and fully supports interactive prompts (like password entry, confirmations, etc).
 
 ```bash
 curl -O https://raw.githubusercontent.com/qStivi/myScripts/main/<script.sh>
@@ -44,21 +44,25 @@ sudo ./<script.sh>
 
 ---
 
-**Alternative: Run Directly from GitHub (One-liner)**
+**Alternative: Quick One-liner Download and Run**
 
-If you trust the script and repository, you can run it directly with:
+If you want to download and run a script in one step (without leaving the script behind), use:
 
-```bash
-sudo bash <(curl -s https://raw.githubusercontent.com/qStivi/myScripts/main/<script.sh>)
-```
-
-or
+**With `curl`:**
 
 ```bash
-sudo bash <(wget -qO- https://raw.githubusercontent.com/qStivi/myScripts/main/<script.sh>)
+curl -O https://raw.githubusercontent.com/qStivi/myScripts/main/<script.sh> && chmod +x <script.sh> && sudo ./<script.sh>; rm -f <script.sh>
 ```
 
-> **Note:** Both methods support interactive prompts.
+**With `wget`:**
+
+```bash
+wget https://raw.githubusercontent.com/qStivi/myScripts/main/<script.sh> && chmod +x <script.sh> && sudo ./<script.sh>; rm -f <script.sh>
+```
+
+Replace `<script.sh>` with your script’s filename.
+
+> **Note:** This method fully supports interactive prompts and advanced Bash features like logging to a file.
 > **Best practice:** Always review scripts before running them, especially with sudo/root.
 
 ---
@@ -84,5 +88,5 @@ sudo ./setup.sh
 Or, as a one-liner:
 
 ```bash
-sudo bash <(curl -s https://raw.githubusercontent.com/qStivi/myScripts/main/setup.sh)
+curl -O https://raw.githubusercontent.com/qStivi/myScripts/main/setup.sh && chmod +x setup.sh && sudo ./setup.sh; rm -f setup.sh
 ```
