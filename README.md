@@ -80,6 +80,7 @@ Replace `<script.sh>` with your script’s filename.
 If you want to run a script called `setup.sh` from this repository’s `main` branch:
 
 ```bash
+apt-get install curl -y 
 curl -O https://raw.githubusercontent.com/qStivi/myScripts/main/setup.sh
 chmod +x setup.sh
 sudo ./setup.sh
@@ -88,5 +89,5 @@ sudo ./setup.sh
 Or, as a one-liner:
 
 ```bash
-curl -O https://raw.githubusercontent.com/qStivi/myScripts/main/setup.sh && chmod +x setup.sh && sudo ./setup.sh; rm -f setup.sh
+apt-get install curl -y && curl -O https://raw.githubusercontent.com/qStivi/myScripts/main/mountscript.sh && chmod +x mountscript.sh && sudo ./mountscript.sh; rm -f mountscript.sh
 ```
