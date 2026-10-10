@@ -91,3 +91,5 @@ Or, as a one-liner:
 ```bash
 apt-get install curl -y && curl -O https://raw.githubusercontent.com/qStivi/myScripts/main/mountscript.sh && chmod +x mountscript.sh && sudo ./mountscript.sh; rm -f mountscript.sh
 ```
+
+<!-- Test edit by Mistral GitHub connector — 2026-10-10. Safe to remove. -->
