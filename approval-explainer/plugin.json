@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "approval-explainer",
+  "version": "1.1.0",
+  "description": "Adds a short, context-free LLM explanation of each tool call to the approval prompt, skipping provably safe commands.",
+  "keywords": ["approval", "safety", "hooks"],
+  "extensions": {
+    "ai.mistral.vibe": {
+      "schemaVersion": 1
+    }
+  }
+}

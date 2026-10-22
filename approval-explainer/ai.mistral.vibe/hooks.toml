@@ -1,0 +1,18 @@
+# pre_tool hook: runs before the user permission prompt.
+#
+# Sends tool_name + tool_input (nothing else) to a small model and prints a
+# structured response whose system_message shows as a UI note next to the
+# approval prompt. decision:"allow" means "pass through" -- the normal
+# permission flow (ask / session / always / deny) still applies unchanged.
+#
+# Runs with cwd = this plugin's root, so the script path is relative.
+#
+# Widen coverage by editing \`match\`, e.g.:
+#   match = "re:(bash|write_file|edit)"
+[[hooks]]
+name = "explain-approval"
+type = "pre_tool"
+match = "bash"
+command = "python3 scripts/explain.py"
+timeout = 20.0
+description = "Explain what the tool call does, with no conversation context"
