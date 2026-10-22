@@ -6,7 +6,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 if [ -d .git ]; then
-  git pull --ff-onlY
+  git pull --ff-only
 else
   command -v curl >/dev/null 2>&1 || {
     echo "update: curl is required when the installed copy is not a git clone" >&2

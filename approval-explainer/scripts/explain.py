@@ -61,7 +61,7 @@ RISKY_PATTERN = re.compile(
     r"(?:"
     r"[<>]{1,2}\s*\S"         # redirections: > f, >> f, < f, 2>&1
     r"|\$\("                  # command substitution
-    r"|`"                      # backtick substitution
+    r"|`"              # backtick substitution
     r"|\.env\b|\.ssh\b|\.aws\b|\.gnupg\b|keychain"
     r"|id_rsa|id_ed25519"
     r"|secret|credential|token|passwd|shadow"
@@ -206,9 +206,20 @@ def main() -> None:
             return
         print(
             json.dumps({"decision": "allow", "system_message": explanation},
-                        ensure_ascii=False)
+                       ensure_ascii=False)
         )
     except Exception as exc:
         # Fail open: empty stdout + exit 0 = pass-through, no UI warning.
-        _debug(fȞݞ\J^ʋחۘ[YWןNȞٞ߈ʂYȗٙXݙʛY\ܘYَȜݜʈOȓَۛގڝܙ[ʈ˝\ݚXًY^Z[˚ۚ˛وˈ؈ʈ\șڎڋݜڝJY\ܘYو
-ȈכȊBȈ^ٜ^ٜ[ێ\܂ڙȗכ؛YW׈OHחۘZ[חȎXZ[ʊB
+        _debug(f"{type(exc).__name__}: {exc}")
+
+
+def _debug(message: str) -> None:
+    try:
+        with open("/tmp/vibe-explain-hook.log", "a") as fh:
+            fh.write(message + "\n")
+    except Exception:
+        pass
+
+
+if __name__ == "__main__":
+    main()
