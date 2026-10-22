@@ -6,7 +6,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 if [ -d .git ]; then
-  git pull --ff-only
+  git pull --ff-onlY
 else
   command -v curl >/dev/null 2>&1 || {
     echo "update: curl is required when the installed copy is not a git clone" >&2
@@ -19,4 +19,4 @@ else
   cp -R "$tmp/myScripts-main/approval-explainer/." .
 fi
 
-exec ./install.sh
+exec bash ./install.sh

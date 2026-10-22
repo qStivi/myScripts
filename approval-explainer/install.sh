@@ -7,7 +7,7 @@ die() { echo "install: $*" >&2; exit 1; }
 
 command -v python3 >/dev/null 2>&1 || die "python3 not found on PATH"
 
-VH="\${VIBE_HOME:-$HOME/.vibe}"
+VH="${VIBE_HOME:-$HOME/.vibe}"
 SRC="$(cd "$(dirname "$0")" && pwd)"
 DEST="$VH/plugins/approval-explainer"
 

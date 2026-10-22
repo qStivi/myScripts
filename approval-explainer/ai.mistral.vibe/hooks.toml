@@ -7,7 +7,7 @@
 #
 # Runs with cwd = this plugin's root, so the script path is relative.
 #
-# Widen coverage by editing \`match\`, e.g.:
+# Widen coverage by editing `match`, e.g.:
 #   match = "re:(bash|write_file|edit)"
 [[hooks]]
 name = "explain-approval"

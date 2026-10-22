@@ -2,7 +2,7 @@
 # Deactivate the approval-explainer hook. Files stay in place unless --purge.
 set -euo pipefail
 
-VH="\${VIBE_HOME:-$HOME/.vibe}"
+VH="${VIBE_HOME:-$HOME/.vibe}"
 DEST="$VH/plugins/approval-explainer"
 HOOKS="$VH/hooks.toml"
 
@@ -35,7 +35,7 @@ else
   echo "No $HOOKS found; nothing to deactivate."
 fi
 
-if [ "\${1:-}" = "--purge" ]; then
+if [ "${1:-}" = "--purge" ]; then
   rm -rf "$DEST"
   echo "Removed $DEST"
 else
